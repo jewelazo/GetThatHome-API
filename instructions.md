@@ -1,4 +1,4 @@
-# Somesplash
+# Captone Project
 
 ## Before getting started
 
@@ -12,9 +12,6 @@
 
 5. Inside the bash terminal run the `bootstrap` command.
 
-## General Instructions
-
-Follow the instructions on [school codeable](http://school.codeable.la/app/weeks/9/lessons/b917256b35f548e0bd262ca7dd8aeb7b) to start working on your assignment.
 
 ## About
 
@@ -27,7 +24,7 @@ You can access your running app looking at `localhost:3000`.
 
 ### The database
 
-The db host is your db container, it's name will be something like: `somesplash-xxxx_db_1`.
+The db host is your db container, it's name will be something like: `xxxx-xxxx_db_1`.
 
 When you configure the db connection on rails, your `config/database.yml` file should look similar to the example below.
 
@@ -37,7 +34,7 @@ default: &default
   encoding: unicode
   username: postgres
   password: <%= ENV['PGPASSWORD'] %>
-  host: somesplash-xxxx_db_1
+  host: xxxx-xxxx_db_1
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 ```
 
