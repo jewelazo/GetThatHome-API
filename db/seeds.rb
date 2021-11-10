@@ -28,7 +28,7 @@ property1 = Property.create(address:"1231231",property_type:1,bedrooms:1,bathroo
 
 property2 = Property.create(address:"11231231",property_type:0,bedrooms:1,bathrooms:2,area:12010,description:"121231",user_id: user2.id,propertiable:sale3)
 
-favorite1 = Favorite.create(user_1:user1.id,property_id:property2.id)
+favorite1 = Favorite.create(user_id:user1.id,property_id:property2.id)
 
-favorite2 = Favorite.create(user_1:user4.id,property_id:property1.id)
+favorite2 = Favorite.create(user_id:user4.id,property_id:property1.id)
 puts "SEEDS FINISHED"
