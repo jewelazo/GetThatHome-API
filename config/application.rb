@@ -22,6 +22,13 @@ Bundler.require(*Rails.groups)
 module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'localhost:3001'
+        resource '*', headers: :any, methods: %i[get post patch]
+      end
+    end
+
     config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
