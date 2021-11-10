@@ -1,12 +1,12 @@
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
 
 class User < ApplicationRecord
-  enum role: { seeker: 0, landlord: 1 }
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  enum role: { seeker: 0, landlord: 1 }
 
   # Associations
   has_many :properties, dependent: :destroy

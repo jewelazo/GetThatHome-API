@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_11_09_203646) do
 
   create_table "properties", force: :cascade do |t|
     t.text "address"
-    t.string "property_type"
+    t.integer "property_type"
     t.integer "bedrooms"
     t.integer "bathrooms"
     t.integer "area"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2021_11_09_203646) do
     t.datetime "remember_created_at"
     t.string "name"
     t.integer "phone"
-    t.string "role"
+    t.integer "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
