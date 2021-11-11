@@ -1,5 +1,6 @@
 module Api
   class SalesController < ApiController
+    skip_before_action :authorized_token, only: %i[index]
     def index
       render json: Sale.all
     end
