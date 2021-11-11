@@ -1,5 +1,6 @@
 module Api
   class RentsController < ApiController
+    skip_before_action :authorized_token, only: %i[index]
     def index
       render json: Rent.all
     end

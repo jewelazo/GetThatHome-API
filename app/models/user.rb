@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_secure_token
 
   enum role: { seeker: 0, landlord: 1 }
 
@@ -16,4 +17,8 @@ class User < ApplicationRecord
   validates :name, :email, :role, presence: true
   validates :name, :email, :phone, uniqueness: true
   validates :email, format: { with: VALID_EMAIL_REGEX }, allow_blank: false
+
+  def invalidate_token
+    update(token: nil)
+  end
 end

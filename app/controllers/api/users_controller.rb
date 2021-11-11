@@ -1,5 +1,6 @@
 module Api
   class UsersController < ApiController
+    skip_before_action :authorized_token, only: %i[create]
     before_action :set_user, only: %i[show update]
 
     def index

@@ -1,5 +1,6 @@
 module Api
   class PropertiesController < ApiController
+    skip_before_action :authorized_token, only: %i[show index]
     before_action :set_property, only: %i[show update]
 
     def index
