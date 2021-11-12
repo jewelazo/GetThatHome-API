@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
     post '/logout', to: 'sessions#destroy'
     resources :properties, :users, :sales, :rents, :favorites
+    get 'profile', action: :show, controller: 'users'
+    patch 'profile', action: :update, controller: 'users'
   end
 end
