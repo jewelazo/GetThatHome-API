@@ -4,11 +4,12 @@ module Api
     before_action :set_user, only: %i[show update]
 
     def index
-      render json: User.all
+      @users = User.all
+      render json: @users
     end
 
     def show
-      render json: @user
+      render json: @user, include: [properties: { include: :propertiable }]
     end
 
     def create

@@ -4,19 +4,27 @@ module Api
     before_action :set_property, only: %i[show update]
 
     def index
-      render json: Property.all
+      @properties = Property.all
+      render json: @properties, include: [:propertiable]
     end
 
     def show
-      render json: @property
+      render json: @property, include: %i[user propertiable]
     end
 
-    def update; end
+    def update
+      @property.propertiable = propertiable_item if propertiable_item
+      if @property.update(properties_params)
+        render json: @property
+      else
+        render json: @property.errors, status: :unprocessable_entity
+      end
+    end
 
     def create
-      @propertiable = propertiable_item
       @property = Property.new(properties_params)
-      @property.propertiable = propertiable_item
+      @property.user = current_user
+      @property.propertiable = propertiable_item  
       if @property.save
         render json: @property
       else
@@ -32,12 +40,22 @@ module Api
 
     def properties_params
       params.permit(:id, :address, :property_type, :bedrooms, :bathrooms, :area, :description,
-                    :propertiable, :user_id)
+                    :propertiable)
+    end
+
+    def rent_params
+      params.permit(:monthly_rent, :maintenance, :pet)
+    end
+
+    def sale_params
+      params.permit(:price)
     end
 
     def propertiable_item
-      return Sale.find(params[:sale_id]) unless params[:sale_id].nil?
-      return Rent.find(params[:rent_id]) unless params[:rent_id].nil?
+      unless params[:monthly_rent].nil? || params[:maintenance].nil? || params[:pet].nil?
+        return Rent.new(rent_params)
+      end
+      return Sale.new(sale_params) unless params[:price].nil?
     end
   end
 end

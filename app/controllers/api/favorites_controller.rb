@@ -1,7 +1,7 @@
 module Api
   class FavoritesController < ApiController
     def index
-      render json: Favorite.all
+      render json: Favorite.all, include: [property: { include: :propertiable }]
     end
 
     def create
