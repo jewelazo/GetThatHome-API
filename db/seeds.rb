@@ -33,3 +33,4 @@ puts "Creating favorites ... "
 favorite1 = Favorite.create(user_id:user1.id,property_id:property2.id,favorite:true,contacted:false)
 favorite2 = Favorite.create(user_id:user4.id,property_id:property1.id,favorite:true,contacted:false)
 puts "Finish"
+
