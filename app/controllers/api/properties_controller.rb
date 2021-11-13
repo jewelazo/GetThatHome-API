@@ -40,7 +40,7 @@ module Api
 
     def properties_params
       params.permit(:id, :address, :property_type, :bedrooms, :bathrooms, :area, :description,
-                    :propertiable, :closed)
+                    :propertiable, :closed, :photos)
     end
 
     def rent_params
