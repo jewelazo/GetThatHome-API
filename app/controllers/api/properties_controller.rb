@@ -5,11 +5,11 @@ module Api
 
     def index
       @properties = Property.all
-      render json: @properties, include: [:propertiable, :user => { :include => :favorites }]
+      render json: @properties, include: [:propertiable, { user: { include: :favorites } }]
     end
 
     def show
-      render json: @property, include: [:propertiable, :user => { :include => :favorites }]
+      render json: @property, include: [:propertiable, { user: { include: :favorites } }]
     end
 
     def update
@@ -40,7 +40,7 @@ module Api
 
     def properties_params
       params.permit(:id, :address, :property_type, :bedrooms, :bathrooms, :area, :description,
-                    :propertiable)
+                    :propertiable, :closed)
     end
 
     def rent_params

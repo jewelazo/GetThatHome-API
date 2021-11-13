@@ -26,8 +26,8 @@ sale4 = Sale.create(price:400)
 
 puts "Creating properties ... "
 
-property1 = Property.create(address:"Los Olivos, Avenida Las Palmeras, Los Olivos, Provincia de Lima, Lima, 39, Perú ",property_type:1,bedrooms:1,bathrooms:2,area:1200,description:"1231231",user_id: user2.id,propertiable:sale1)
-property2 = Property.create(address:"Los Flamingos, Urbanización Sol de Oro, Los Olivos, Provincia de Lima, Lima, LIMA 31, Perú",property_type:0,bedrooms:1,bathrooms:2,area:12010,description:"121231",user_id: user2.id,propertiable:sale3)
+property1 = Property.create(address:"Los Olivos, Avenida Las Palmeras, Los Olivos, Provincia de Lima, Lima, 39, Perú ",property_type:1,bedrooms:1,bathrooms:2,area:1200,description:"1231231",user_id: user2.id,propertiable:sale1,closed:false)
+property2 = Property.create(address:"Los Flamingos, Urbanización Sol de Oro, Los Olivos, Provincia de Lima, Lima, LIMA 31, Perú",property_type:0,bedrooms:1,bathrooms:2,area:12010,description:"121231",user_id: user2.id,propertiable:sale3,closed:false)
 puts "Creating favorites ... "
 
 favorite1 = Favorite.create(user_id:user1.id,property_id:property2.id,favorite:true,contacted:false)
