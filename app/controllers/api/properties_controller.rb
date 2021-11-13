@@ -5,11 +5,11 @@ module Api
 
     def index
       @properties = Property.all
-      render json: @properties, include: [:propertiable]
+      render json: @properties, include: [:propertiable, :user => { :include => :favorites }]
     end
 
     def show
-      render json: @property, include: %i[user propertiable]
+      render json: @property, include: [:propertiable, :user => { :include => :favorites }]
     end
 
     def update
@@ -24,7 +24,7 @@ module Api
     def create
       @property = Property.new(properties_params)
       @property.user = current_user
-      @property.propertiable = propertiable_item  
+      @property.propertiable = propertiable_item
       if @property.save
         render json: @property
       else
