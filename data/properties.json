@@ -1,0 +1,86 @@
+[
+    {
+        "address":"Francisco de Paula Ugarriza 27, Miraflores, Lima",
+        "photo": {
+            "io_path": "data/properties/property1.png",
+            "filename": "property1.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property2.png",
+            "filename": "property2.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property3.png",
+            "filename": "property3.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property4.png",
+            "filename": "property4.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property5.png",
+            "filename": "property5.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property6.png",
+            "filename": "property6.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property7.png",
+            "filename": "property7.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property8.png",
+            "filename": "property8.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property9.png",
+            "filename": "property9.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property10.png",
+            "filename": "property10.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property11.png",
+            "filename": "property11.png"
+        }
+    },
+    {
+        "address":"86872 Jacob Gateway, Durganport, WV 48044",
+        "photo": {
+            "io_path": "data/properties/property12.png",
+            "filename": "property12.png"
+        }
+    }
+]
