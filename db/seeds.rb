@@ -46,9 +46,9 @@ users_seeker.each do |user_seeker|
     all_properties[n..n+5].each do |property|
         property_data=property.slice(:address)
         new_property=Property.new(property_data)
-        io_path = property[:photo][:io_path]
-        filename = property[:photo][:filename]
-        new_property.photo.attach(io: File.open(io_path), filename: filename)
+        io_path = property[:photos][:io_path]
+        filename = property[:photos][:filename]
+        new_property.photos.attach(io: File.open(io_path), filename: filename)
         new_property.property_type=[0,1].sample()
         new_property.closed=false
         new_property.bathrooms=(1..5).to_a.sample()
@@ -89,4 +89,5 @@ puts "Finish seeding favorites"
 # properties_list.sample(rand(3..6))
 # favorite1 = Favorite.create(user_id:user1.id,property_id:property2.id,favorite:true,contacted:false)
 # favorite2 = Favorite.create(user_id:user4.id,property_id:property1.id,favorite:true,contacted:false)
+puts "Finish"
 

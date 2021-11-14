@@ -1,7 +1,7 @@
 class Property < ApplicationRecord
   enum property_type: { appartment: 0, house: 1 }
 
-  has_one_attached :photo
+  has_many_attached :photos
   belongs_to :user
 
   belongs_to :propertiable, polymorphic: true

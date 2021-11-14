@@ -1,84 +1,84 @@
 [
     {
-        "address":"Francisco de Paula Ugarriza 27, Miraflores, Lima",
-        "photo": {
+        "address":"Francisco de Paula Ugarriza 27, Miraflores,",
+        "photos": {
             "io_path": "data/properties/property1.png",
             "filename": "property1.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Av.Tomas valle 27, Callao",
+        "photos": {
             "io_path": "data/properties/property2.png",
             "filename": "property2.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Morales Duárez 30,Lima",
+        "photos": {
             "io_path": "data/properties/property3.png",
             "filename": "property3.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Javier Prado 12,Piura",
+        "photos": {
             "io_path": "data/properties/property4.png",
             "filename": "property4.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Caminos del Inca 15000,Santiago de Surco",
+        "photos": {
             "io_path": "data/properties/property5.png",
             "filename": "property5.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Universitaria 100 ,Lima",
+        "photos": {
             "io_path": "data/properties/property6.png",
             "filename": "property6.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Elmer Faucett 1200,Callao",
+        "photos": {
             "io_path": "data/properties/property7.png",
             "filename": "property7.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Eduardo de Habich 15102,San Martin de Porres",
+        "photos": {
             "io_path": "data/properties/property8.png",
             "filename": "property8.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Los Jazmines 1500, Independencia",
+        "photos": {
             "io_path": "data/properties/property9.png",
             "filename": "property9.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Los Conquistadores, San Isidro, Provincia de Lima, Lima, 15073",
+        "photos": {
             "io_path": "data/properties/property10.png",
             "filename": "property10.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Avenida Los Próceres, Los Próceres, Santiago de Surco, Provincia de Lima, Lima, 15056",
+        "photos": {
             "io_path": "data/properties/property11.png",
             "filename": "property11.png"
         }
     },
     {
-        "address":"86872 Jacob Gateway, Durganport, WV 48044",
-        "photo": {
+        "address":"Metro de Lima, Avenida Santiago de Surco, La Capullana, Santiago de Surco, Provincia de Lima, Lima, 15038",
+        "photos": {
             "io_path": "data/properties/property12.png",
             "filename": "property12.png"
         }
