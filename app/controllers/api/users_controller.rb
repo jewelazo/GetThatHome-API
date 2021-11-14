@@ -1,4 +1,5 @@
 # rubocop:disable Metrics/AbcSize
+# rubocop:disable Layout/LineLength
 module Api
   class UsersController < ApiController
     skip_before_action :authorized_token, only: %i[create]
@@ -10,9 +11,9 @@ module Api
 
     def show
       render json: @user.as_json.merge({ favorites: @user.favorites.map do |f|
-        f.as_json(include: [:property]).merge({ photos: f.property.photos.map do |photo|
-                                                          { url: url_for(photo) }
-                                                        end })
+        f.as_json(include: [property: { include: :propertiable }]).merge({ photos: f.property.photos.map do |photo|
+                                                                                     { url: url_for(photo) }
+                                                                                   end })
       end }).merge({ properties: @user.properties.map do |p|
         p.as_json(include: [:propertiable]).merge({ photos: p.photos.map do |photo|
                                                               { url: url_for(photo) }
@@ -49,3 +50,4 @@ module Api
   end
 end
 # rubocop:enable Metrics/AbcSize
+# rubocop:enable Layout/LineLength

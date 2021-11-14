@@ -39,7 +39,7 @@ puts "Finish seeding sales"
 
 
 puts "Start seeding properties ... "
-users_seeker=User.where(role:0)
+users_seeker=User.where(role:1)
 n=0
 r=1
 users_seeker.each do |user_seeker|
@@ -73,7 +73,7 @@ puts "Finish seeding properties"
 
 puts "Start seeding favorites ... "
 properties_list=Property.all
-landlord_users=User.where(role:1)
+landlord_users=User.where(role:0)
 landlord_users.each do |landlord_user|
     properties_list.sample(rand(3..5)).each do |property|
         favorite_data={
