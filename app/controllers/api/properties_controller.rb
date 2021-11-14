@@ -1,8 +1,8 @@
+# rubocop:disable Layout/LineLength
 module Api
   class PropertiesController < ApiController
     skip_before_action :authorized_token, only: %i[show index]
     before_action :set_property, only: %i[show update]
-    # rubocop:disable Layout/LineLength
     def index
       @properties = Property.all
       render json: @properties.map { |property|
@@ -66,6 +66,6 @@ module Api
       end
       return Sale.new(sale_params) unless params[:price].nil?
     end
-    # rubocop:enable Layout/LineLength
   end
 end
+# rubocop:enable Layout/LineLength

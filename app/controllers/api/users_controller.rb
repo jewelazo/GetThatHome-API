@@ -1,15 +1,23 @@
+# rubocop:disable Metrics/AbcSize
 module Api
   class UsersController < ApiController
     skip_before_action :authorized_token, only: %i[create]
     before_action :set_user, only: %i[show update]
-
     def index
       @users = User.all
       render json: @users
     end
 
     def show
-      render json: @user, include: [properties: { include: :propertiable }]
+      render json: @user.as_json.merge({ favorites: @user.favorites.map do |f|
+        f.as_json(include: [:property]).merge({ photos: f.property.photos.map do |photo|
+                                                          { url: url_for(photo) }
+                                                        end })
+      end }).merge({ properties: @user.properties.map do |p|
+        p.as_json(include: [:propertiable]).merge({ photos: p.photos.map do |photo|
+                                                              { url: url_for(photo) }
+                                                            end })
+      end })
     end
 
     def create
@@ -40,3 +48,4 @@ module Api
     end
   end
 end
+# rubocop:enable Metrics/AbcSize
