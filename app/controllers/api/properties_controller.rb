@@ -2,14 +2,22 @@ module Api
   class PropertiesController < ApiController
     skip_before_action :authorized_token, only: %i[show index]
     before_action :set_property, only: %i[show update]
-
+    # rubocop:disable Layout/LineLength
     def index
       @properties = Property.all
-      render json: @properties, include: [:propertiable, { user: { include: :favorites } }]
+      render json: @properties.map { |property|
+        property.as_json(include: [:propertiable,
+                                   { user: { include: :favorites } }]).merge({ photos: property.photos.map do |photo|
+                                                                                         { url: url_for(photo) }
+                                                                                       end })
+      }
     end
 
     def show
-      render json: @property, include: [:propertiable, { user: { include: :favorites } }]
+      render json: @property.as_json(include: [:propertiable,
+                                               { user: { include: :favorites } }]).merge({ photos: @property.photos.map do |photo|
+                                                                                                     { url: url_for(photo) }
+                                                                                                   end })
     end
 
     def update
@@ -25,6 +33,7 @@ module Api
       @property = Property.new(properties_params)
       @property.user = current_user
       @property.propertiable = propertiable_item
+      @property.photos.attach(params[:photos])
       if @property.save
         render json: @property
       else
@@ -40,7 +49,7 @@ module Api
 
     def properties_params
       params.permit(:id, :address, :property_type, :bedrooms, :bathrooms, :area, :description,
-                    :propertiable, :closed, :photos)
+                    :propertiable, :closed, photos: [])
     end
 
     def rent_params
@@ -57,5 +66,6 @@ module Api
       end
       return Sale.new(sale_params) unless params[:price].nil?
     end
+    # rubocop:enable Layout/LineLength
   end
 end

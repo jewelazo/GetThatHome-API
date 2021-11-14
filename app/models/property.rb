@@ -1,5 +1,5 @@
 class Property < ApplicationRecord
-  enum property_type: { appartment: 0, house: 1 }
+  enum property_type: { apartment: 0, house: 1 }
 
   has_many_attached :photos
   belongs_to :user
