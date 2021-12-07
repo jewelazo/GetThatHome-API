@@ -24,11 +24,10 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:3001'
-        resource '*', headers: :any, methods: %i[get post patch]
+        origins '*'
+        resource '*', headers: :any, methods: %i[get post options]
       end
     end
-
     config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.
